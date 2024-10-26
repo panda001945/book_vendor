@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.book-list, .cart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+}
+
+.book-item, .cart-item {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin: 0.5em;
+    width: 80%;
+    max-width: 400px;
+}
+/* Admin Panel Layout */
+.admin-container {
+    display: flex;
+}
+
+.admin-sidebar {
+    width: 200px;
+    background-color: #343a40;
+    color: #fff;
+    padding: 1em;
+    height: 100vh;
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-sidebar li {
+    margin: 1em 0;
+}
+
+.admin-sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-sidebar a:hover {
+    text-decoration: underline;
+}
+
+.admin-main-content {
+    flex-grow: 1;
+    padding: 2em;
+    background-color: #f8f9fa;
+}
+
+.admin-main-content h2 {
+    color: #343a40;
+}

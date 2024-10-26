@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Admin Panel{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <a href="{% url 'admin:index' %}">Dashboard</a> |
+            <a href="{% url 'admin:backend_book_changelist' %}">Manage Books</a> |
+            <a href="{% url 'admin:backend_order_changelist' %}">Manage Orders</a> |
+            <a href="{% url 'logout' %}">Logout</a>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <h2>Admin Menu</h2>
+            <ul>
+                <li><a href="{% url 'admin:index' %}">Dashboard</a></li>
+                <li><a href="{% url 'admin:backend_book_changelist' %}">Books</a></li>
+                <li><a href="{% url 'admin:backend_order_changelist' %}">Orders</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="admin-main-content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

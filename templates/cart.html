@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Your Cart{% endblock %}
+{% block content %}
+<h2>Your Cart</h2>
+<div class="cart">
+    {% for order in orders %}
+        <div class="cart-item">
+            <h3>{{ order.book.title }}</h3>
+            <p>Quantity: {{ order.quantity }}</p>
+            <p>Total Price: ${{ order.total_price }}</p>
+            <form method="post" action="{% url 'update_quantity' order.id %}">
+                {% csrf_token %}
+                <input type="number" name="quantity" value="{{ order.quantity }}" min="1">
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    {% empty %}
+        <p>Your cart is empty.</p>
+    {% endfor %}
+    <p class="cart-total">Total: ${{ total }}</p>
+</div>
+{% endblock %}
